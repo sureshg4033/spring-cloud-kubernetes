@@ -15,6 +15,9 @@ pipeline {
         maven 'maven3'
     }
     stages {
+	    stage('Clean Workspace'){
+		    cleanWs()
+	    }
         stage('Git-Checkout') {
             when {
 				expression { params.action == 'create' }
